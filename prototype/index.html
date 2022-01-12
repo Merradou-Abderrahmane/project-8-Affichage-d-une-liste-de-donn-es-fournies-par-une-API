@@ -7,19 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-   <h1 id="API"></h1>
-   
-   <script src="app.js"></script>
+    <script>
+        var city = prompt();
+        var key ='d78f7c47ab341e4363a663482f4b3470&units=metric'
+        var url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
+
+        fetch(url)
+        .then(function(response){
+            return response.json()
+            
+        })
+        .then(function(json){
+            var city = json.name
+            
+            var temprture = json.main.temp
+            var sky = json.weather[0].description
+
+
+            console.log(city)
+            
+            console.log(sky)
+            console.log(temprture)
+        })
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
