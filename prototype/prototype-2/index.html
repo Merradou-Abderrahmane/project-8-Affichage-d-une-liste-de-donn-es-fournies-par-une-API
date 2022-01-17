@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX API</title>
+    <title>Document</title>
 </head>
-
 <body>
     <script>
-        fetch("products.json")
-            .then(function (response) {
-                return response.json()
-            })
-            .then(function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    document.write("<p>" + data[i].name +
-                        " " + data[i].price + "</p>"
-                    )
-                }
-            })
-            .catch(function (error) {
-                console.log(error)
-            })
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=tanger&appid=d78f7c47ab341e4363a663482f4b3470')
+
+        .then (function(reponse){
+            return reponse.json()
+        })
+
+        .then(function(data){
+            console.log(data)
+        })
+        
     </script>
-
 </body>
-
 </html>
