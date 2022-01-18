@@ -7,6 +7,10 @@
     {
         "name": "Bread",
         "price": 2
-      }
+      },
+    {
+      "name" : "oil",
+      "price" : 20
+    }  
 
   ]
