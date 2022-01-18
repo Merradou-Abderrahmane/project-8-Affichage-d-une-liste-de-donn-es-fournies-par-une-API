@@ -1,18 +1,15 @@
-<script src="work.js"></script>
-<script src="workManger.js"></script>
-
+<script src="ouvrage.js"></script>
+<script src="gestionOuvrage.js"></script>
 <script>
-    var workManger = new WorkManager();
+    var gestionOuvrage = new GestionOuvrage();
+    console.log("Avent:" + gestionOuvrage.ouvrageList)
 
-
-    // Ajouter un ouvrage
-    var work = new Work();
-    work.title = "My Title"
-    workManger.addWork(work)
-
-    var work2 = new Work()
-    work2.title = "My Title 2"
-    workManger.addWork(work2)
-
-    console.log(workManger.workList)
+    // afficher un ouvrage
+    var ouvrage = new Ouvrage();
+    ouvrage.titre = "Mon titre";
+    gestionOuvrage.addOuvrage(ouvrage)
+    var ouvrage1 = new Ouvrage();
+    ouvrage1.titre = "test";
+    gestionOuvrage.addOuvrage(ouvrage1)
+   console.log(gestionOuvrage.ouvrageList)
 </script>
