@@ -5,15 +5,6 @@ async function onSearch() {
     city = document.getElementById("cityInput").value
     var url=`https://api.openweathermap.org/data/2.5/weather?q=tanger&appid=d78f7c47ab341e4363a663482f4b3470&units=metric`;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=tanger&appid=d78f7c47ab341e4363a663482f4b3470&units=metric`)
-
-    .then (function(reponse){
-        return reponse.json()
-    })
-
-    .then(function(data){
-        console.log(data)
-    })
     if (city) {
         weatherManager.fetchForecast(url).then(() => {
             display(weatherManager.currentForecast)
