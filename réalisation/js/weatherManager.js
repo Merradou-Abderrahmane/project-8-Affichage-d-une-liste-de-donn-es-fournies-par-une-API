@@ -1,6 +1,7 @@
 class WeatherManager {
     #_currentForecast;
-    
+    #_weekForecast;
+    #_errorMsg = undefined;
 
     set currentForecast(value) {
         this.#_currentForecast = value
@@ -10,7 +11,9 @@ class WeatherManager {
         return this.#_currentForecast
     }
 
-  
+    get errorMsg() {
+        return this.#_errorMsg;
+    }
 
     async fetchForecast(url) {
 
@@ -19,13 +22,18 @@ class WeatherManager {
         // handle the response
 
         var weather = new Weather()
-        weather.city = json.name
-        weather.description = json.weather[0].main
-        weather.iconCode = json.weather[0].icon
-        weather.temp = json.main.temp
-        weather.country = json.main.country
-        weather.humidity = json.main.humidity
-        this.#_currentForecast = weather
+   
 
+        if(!response.ok){
+            this.#_errorMsg = `An error has occured: ${response.status}`
+        } else {
+            this.#_errorMsg = undefined
+            weather.city = json.name
+            weather.description = json.weather[0].main
+            weather.iconCode = json.weather[0].icon
+            weather.temp = json.main.temp
+            weather.humidity = json.main.humidity
+            this.#_currentForecast = weather
+        }
     }
 }
