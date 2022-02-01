@@ -1,6 +1,5 @@
 class WeatherManager {
     #_currentForecast;
-    #_weekForecast;
     #_errorMsg = undefined;
 
     set currentForecast(value) {
