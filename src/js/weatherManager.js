@@ -24,7 +24,7 @@ class WeatherManager {
    
 
         if(!response.ok){
-            this.#_errorMsg = `An error has occured: ${response.status}`
+            this.#_errorMsg = `An error has occurred: ${response.status}`
         } else {
             this.#_errorMsg = undefined
             weather.city = json.name
